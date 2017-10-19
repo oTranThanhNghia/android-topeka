@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.feature'
 
 android {
-    buildToolsVersion '26.0.1'
+    buildToolsVersion '26.0.2'
     compileSdkVersion 26
+
+    baseFeature = true
 
     dataBinding {
         enabled = true
     }
 
     defaultConfig {
-        applicationId "com.google.samples.apps.topeka"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -35,7 +36,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
         }
     }
 
@@ -45,7 +46,7 @@ android {
 }
 
 ext {
-    supportLibVersion = "26.0.0"
+    supportLibVersion = "26.1.0"
     espressoVersion = "2.2.2"
     androidTestVersion = "0.5"
     hamcrestVersion = "1.3"
