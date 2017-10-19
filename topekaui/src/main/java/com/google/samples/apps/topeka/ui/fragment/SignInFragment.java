@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.topeka.fragment;
+package com.google.samples.apps.topeka.ui.fragment;
 
 import android.app.Activity;
 import android.os.Build;
@@ -37,7 +37,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 
 import com.google.samples.apps.topeka.R;
-import com.google.samples.apps.topeka.activity.CategorySelectionActivity;
+import com.google.samples.apps.topeka.ui.activity.CategorySelectionActivity;
 import com.google.samples.apps.topeka.adapter.AvatarAdapter;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;

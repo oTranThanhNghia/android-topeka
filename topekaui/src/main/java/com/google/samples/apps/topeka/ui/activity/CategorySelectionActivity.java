@@ -14,35 +14,31 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.topeka.activity;
+package com.google.samples.apps.topeka.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.transition.TransitionInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.samples.apps.topeka.R;
-import com.google.samples.apps.topeka.databinding.ActivityCategorySelectionBinding;
-import com.google.samples.apps.topeka.fragment.CategorySelectionFragment;
-import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;
 import com.google.samples.apps.topeka.model.Player;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;
+import com.google.samples.apps.topeka.ui.fragment.CategorySelectionFragment;
+import com.google.samples.apps.topeka.widget.AvatarView;
 
 public class CategorySelectionActivity extends AppCompatActivity {
 
@@ -68,8 +64,9 @@ public class CategorySelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityCategorySelectionBinding binding = DataBindingUtil
-                .setContentView(this, R.layout.activity_category_selection);
+
+        setContentView(R.layout.activity_category_selection);
+
         Player player = getIntent().getParcelableExtra(EXTRA_PLAYER);
         if (!PreferencesHelper.isSignedIn(this)) {
             if (player == null) {
@@ -78,7 +75,13 @@ public class CategorySelectionActivity extends AppCompatActivity {
                 PreferencesHelper.writeToPreferences(this, player);
             }
         }
-        binding.setPlayer(player);
+
+        AvatarView avatar = findViewById(R.id.avatar);
+        avatar.setAvatar(player.getAvatar().getDrawableId());
+
+        TextView title = findViewById(R.id.title);
+        title.setText(player.getFirstName() + " " + player.getLastInitial());
+
         setUpToolbar();
         if (savedInstanceState == null) {
             attachCategoryGridFragment();
