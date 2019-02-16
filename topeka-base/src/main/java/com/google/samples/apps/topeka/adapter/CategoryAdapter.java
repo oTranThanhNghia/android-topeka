@@ -32,8 +32,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.google.samples.apps.topeka.R;
-import com.google.samples.apps.topeka.databinding.ItemCategoryBinding;
+import com.google.samples.apps.topeka.base.R;
+
+import com.google.samples.apps.topeka.base.databinding.ItemCategoryBinding;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.model.Category;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;

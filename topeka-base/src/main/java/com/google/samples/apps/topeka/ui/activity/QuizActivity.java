@@ -29,7 +29,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.VisibleForTesting;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -47,12 +46,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.samples.apps.topeka.R;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.helper.ViewUtils;
 import com.google.samples.apps.topeka.model.Category;
 import com.google.samples.apps.topeka.model.JsonAttributes;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;
+
 import com.google.samples.apps.topeka.ui.fragment.QuizFragment;
 import com.google.samples.apps.topeka.widget.TextSharedElementCallback;
 import com.google.samples.apps.topeka.widget.quiz.AbsQuizView;

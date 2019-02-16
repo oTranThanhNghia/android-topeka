@@ -17,11 +17,11 @@
 package com.google.samples.apps.topeka.ui.fragment;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.app.Fragment;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -29,12 +29,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
-import com.google.samples.apps.topeka.R;
-import com.google.samples.apps.topeka.ui.activity.QuizActivity;
 import com.google.samples.apps.topeka.adapter.CategoryAdapter;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.helper.TransitionHelper;
 import com.google.samples.apps.topeka.model.Category;
 import com.google.samples.apps.topeka.model.JsonAttributes;
+
+import com.google.samples.apps.topeka.ui.activity.QuizActivity;
 import com.google.samples.apps.topeka.widget.OffsetDecoration;
 
 public class CategorySelectionFragment extends Fragment {
@@ -59,7 +60,7 @@ public class CategorySelectionFragment extends Fragment {
     }
 
     private void setUpQuizGrid(final RecyclerView categoriesView) {
-        final int spacing = getContext().getResources()
+        final int spacing = this.getActivity().getResources()
                 .getDimensionPixelSize(R.dimen.spacing_nano);
         categoriesView.addItemDecoration(new OffsetDecoration(spacing));
         mAdapter = new CategoryAdapter(getActivity());

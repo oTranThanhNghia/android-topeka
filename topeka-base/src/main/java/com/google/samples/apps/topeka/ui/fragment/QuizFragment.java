@@ -31,7 +31,6 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.google.samples.apps.topeka.R;
 import com.google.samples.apps.topeka.adapter.QuizAdapter;
 import com.google.samples.apps.topeka.adapter.ScoreAdapter;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
@@ -41,6 +40,7 @@ import com.google.samples.apps.topeka.model.Player;
 import com.google.samples.apps.topeka.model.Theme;
 import com.google.samples.apps.topeka.model.quiz.Quiz;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.widget.AvatarView;
 import com.google.samples.apps.topeka.widget.quiz.AbsQuizView;
 
@@ -138,13 +138,15 @@ public class QuizFragment extends android.app.Fragment {
     @SuppressWarnings("ConstantConditions")
     private void setAvatarDrawable(AvatarView avatarView) {
         Player player = PreferencesHelper.getPlayer(getActivity());
-        avatarView.setAvatar(player.getAvatar().getDrawableId());
-        ViewCompat.animate(avatarView)
-                .setInterpolator(new FastOutLinearInInterpolator())
-                .setStartDelay(500)
-                .scaleX(1)
-                .scaleY(1)
-                .start();
+        if(player!=null) {
+            avatarView.setAvatar(player.getAvatar().getDrawableId());
+            ViewCompat.animate(avatarView)
+                    .setInterpolator(new FastOutLinearInInterpolator())
+                    .setStartDelay(500)
+                    .scaleX(1)
+                    .scaleY(1)
+                    .start();
+        }
     }
 
     private void decideOnViewToDisplay() {

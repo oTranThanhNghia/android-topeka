@@ -23,9 +23,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 
-import com.google.samples.apps.topeka.R;
-import com.google.samples.apps.topeka.ui.fragment.SignInFragment;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;
+
+import com.google.samples.apps.topeka.ui.fragment.SignInFragment;
 
 public class SignInActivity extends AppCompatActivity {
 

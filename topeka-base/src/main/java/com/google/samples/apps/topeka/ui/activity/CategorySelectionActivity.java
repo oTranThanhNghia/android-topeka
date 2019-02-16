@@ -33,10 +33,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.samples.apps.topeka.R;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;
+import com.google.samples.apps.topeka.model.Avatar;
 import com.google.samples.apps.topeka.model.Player;
 import com.google.samples.apps.topeka.persistence.TopekaDatabaseHelper;
+
 import com.google.samples.apps.topeka.ui.fragment.CategorySelectionFragment;
 import com.google.samples.apps.topeka.widget.AvatarView;
 
@@ -77,11 +79,18 @@ public class CategorySelectionActivity extends AppCompatActivity {
         }
 
         AvatarView avatar = findViewById(R.id.avatar);
-        avatar.setAvatar(player.getAvatar().getDrawableId());
+        Avatar avatarPlayer = null;
+        if (player != null) {
+            avatarPlayer = player.getAvatar();
+        }
+        int drawableId = 0;
+        if (avatarPlayer != null) drawableId = avatarPlayer.getDrawableId();
+        avatar.setAvatar(drawableId);
 
         TextView title = findViewById(R.id.title);
-        title.setText(player.getFirstName() + " " + player.getLastInitial());
-
+        if (player != null) {
+            title.setText(player.getFirstName() + " " + player.getLastInitial());
+        }
         setUpToolbar();
         if (savedInstanceState == null) {
             attachCategoryGridFragment();

@@ -33,7 +33,7 @@ import android.util.AttributeSet;
 import android.widget.Checkable;
 import android.widget.ImageView;
 
-import com.google.samples.apps.topeka.R;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.widget.outlineprovider.RoundOutlineProvider;
 

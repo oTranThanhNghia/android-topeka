@@ -24,7 +24,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import com.google.samples.apps.topeka.R;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.model.Category;
 import com.google.samples.apps.topeka.model.quiz.FillTwoBlanksQuiz;
 

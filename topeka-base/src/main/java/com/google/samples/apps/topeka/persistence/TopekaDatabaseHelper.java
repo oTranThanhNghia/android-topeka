@@ -25,7 +25,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.google.samples.apps.topeka.R;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.helper.JsonHelper;
 import com.google.samples.apps.topeka.model.Category;
 import com.google.samples.apps.topeka.model.JsonAttributes;

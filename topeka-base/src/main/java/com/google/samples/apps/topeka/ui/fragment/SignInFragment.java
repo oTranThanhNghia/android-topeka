@@ -17,12 +17,12 @@
 package com.google.samples.apps.topeka.ui.fragment;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.app.Fragment;
 import android.support.v4.util.Pair;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
@@ -36,14 +36,14 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 
-import com.google.samples.apps.topeka.R;
-import com.google.samples.apps.topeka.ui.activity.CategorySelectionActivity;
 import com.google.samples.apps.topeka.adapter.AvatarAdapter;
 import com.google.samples.apps.topeka.helper.ApiLevelHelper;
 import com.google.samples.apps.topeka.helper.PreferencesHelper;
 import com.google.samples.apps.topeka.helper.TransitionHelper;
 import com.google.samples.apps.topeka.model.Avatar;
 import com.google.samples.apps.topeka.model.Player;
+import com.google.samples.apps.topeka.base.R;
+import com.google.samples.apps.topeka.ui.activity.CategorySelectionActivity;
 import com.google.samples.apps.topeka.widget.TransitionListenerAdapter;
 
 /**

@@ -27,7 +27,7 @@ import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.google.samples.apps.topeka.R;
+import com.google.samples.apps.topeka.base.R;
 import com.google.samples.apps.topeka.adapter.OptionsQuizAdapter;
 import com.google.samples.apps.topeka.helper.AnswerHelper;
 import com.google.samples.apps.topeka.model.Category;
